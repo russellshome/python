@@ -1,8 +1,16 @@
+#!/usr/bin/env python
+"""
+Description : Change colours on an RGB LED
+Author      : Russell
+E-mail      : russellshome@gmail.com
+Date        : 2020/08/26
+Circuit     : https://crcit.net/c/8bc8330a72874a9d97dc4b0c0dcb0748
+"""
 from gpiozero import RGBLED
 from time import sleep
 from signal import pause
-
-led = RGBLED(red=9, green=10, blue=11)
+print(__doc__)
+led = RGBLED(red=10, green=9, blue=11)
 while True:
     led.color = (0,1,1)
     print ("red")

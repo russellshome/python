@@ -8,10 +8,8 @@ Circuit     : https://crcit.net/c/98db0b1c4bcc420fbb3f02dd2a52553a
 """
 from gpiozero import LED
 from time import sleep
-
-led = LED(17)
 print(__doc__)
-
+led = LED(17)
 while True:
     led.on()
     sleep(1)
