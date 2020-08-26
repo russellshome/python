@@ -5,6 +5,11 @@ Author      : Russell
 E-mail      : russellshome@gmail.com
 Date        : 2020/08/26
 Circuit     : https://crcit.net/c/8bc8330a72874a9d97dc4b0c0dcb0748
+
+My RGB LED has a common anode
+In this case 0 means on full and 1 is off
+Other RGB LEDs have a common cathode
+In that case 1 means on full and 0 is off
 """
 from gpiozero import RGBLED
 from time import sleep
