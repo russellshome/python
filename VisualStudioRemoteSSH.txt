@@ -1,0 +1,29 @@
+Password-less SSH into Raspberry Pi with openSSH
+REF: https://electrobotify.wordpress.com/2019/08/14/passwordless-ssh-into-raspberry-pi-with-openssh/
+
+Step 1: Generate SSH Keys for the user (the computer you want to SSH from)
+
+ssh-keygen -t ed25519
+and press enter when prompted “Enter file in which to save the key” to save it in the default 
+location of C:\Users\USERNAME/.ssh/id_ed25519 . You will now have a .ssh folder containing 
+2 files: id_ed25519 and id_ed25519.pub . The id_ed25519.pub is your public SSH key and should 
+be shared with the host computer you want to SSH into (in our case the Raspberry Pi).
+
+Note: The id_ed25519 file is your private key and must never be shared!
+
+Step 2: Add public SSH Key to Host (the computer you want to SSH into)
+
+mkdir ~/.ssh
+
+scp C:\Users\YOUR_USERNAME\.ssh\id_ed25519.pub pi@YOUR_PI_ADDRESS:~\.ssh\authorized_keys
+
+Remote Development on Raspberry Pi with VS Code
+REF: https://electrobotify.wordpress.com/2019/08/16/remote-development-on-raspberry-pi-with-vs-code/
+
+In VS Code Install Remote-SSH
+Open the command palette (Ctrl + Shift + P / CMD + P) and type remote-shh and select “Remote SSH: Connect to Host…
+
+Then enter pi@IP_ADDRESS (where IP_ADDRESS is the IP address of your RPi) and it should take 
+1 to 2 minutes to automatically install VS-Code server components in the RPi if it’s the 
+first time connecting. After your remote session connects you should be able to see your
+ pi@IP_ADDRESS at the bottom left corner of the VS Code Insiders (in the green SSH section)
