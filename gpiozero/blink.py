@@ -6,6 +6,8 @@ E-mail      : russellshome@gmail.com
 Date        : 2020/08/26
 Circuit     : https://crcit.net/c/98db0b1c4bcc420fbb3f02dd2a52553a
 """
+import warnings
+warnings.simplefilter('ignore')
 from gpiozero import LED
 from time import sleep
 print(__doc__)
